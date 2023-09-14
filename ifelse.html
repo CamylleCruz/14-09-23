@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validação de Usuário</title>
+</head>
+<body>
+    <h1>Validação de Usuário</h1>
+
+    <form id="formulario">
+        <label for="username">Nome de Usuário:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="button" onclick="validarUsuario()">Entrar</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function validarUsuario() {
+            // Obtenha os valores do nome de usuário e senha do formulário
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            // Validação simples (substitua por lógica de validação real)
+            if (username === "usuario" && password === "senha123") {
+                document.getElementById("resultado").textContent = "Login bem-sucedido!";
+            } else {
+                document.getElementById("resultado").textContent = "Nome de usuário ou senha incorretos. Tente novamente.";
+            }
+        }
+    </script>
+</body>
+</html>

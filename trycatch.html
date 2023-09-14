@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Busca de Frutas</title>
+</head>
+<body>
+    <h1>Busca de Frutas</h1>
+
+    <input type="text" id="frutaInput" placeholder="Digite uma fruta">
+    <button onclick="buscarFruta()">Buscar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function buscarFruta() {
+            // Array de nomes de frutas
+            let frutas = ["maçã", "banana", "abacaxi", "laranja", "uva"];
+
+            // Obtém o valor digitado no input
+            let frutaBuscada = document.getElementById("frutaInput").value.toLowerCase();
+
+            // Variável para armazenar o resultado da busca
+            let resultado = "";
+
+            try {
+                // Tenta realizar a busca na matriz
+                if (frutas.includes(frutaBuscada)) {
+                    resultado = frutaBuscada + " encontrado no banco de dados!";
+                } else {
+                    throw new Error("Infelizmente esta fruta não foi encontrada, mil perdões!!!");
+                }
+            } catch (error) {
+                // Captura o erro e personaliza a mensagem de erro
+                resultado = error.message;
+            }
+
+            // Exibe o resultado no elemento <p>
+            document.getElementById("resultado").textContent = resultado;
+        }
+    </script>
+</body>
+</html>

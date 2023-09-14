@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ordenar Matriz em Ordem Decrescente</title>
+</head>
+<body>
+    <h1>Matriz em Ordem Decrescente</h1>
+
+    <ul id="lista"></ul>
+
+    <script>
+        // Sua matriz de números
+        let minhaMatriz = [5, 1, 4, 2, 8];
+
+        // Função para ordenar a matriz em ordem decrescente usando o método bubble sort
+        function ordenarMatrizDecrescente(arr) {
+            let n = arr.length;
+            let trocado;
+
+            do {
+                trocado = false;
+
+                for (let i = 0; i < n - 1; i++) {
+                    if (arr[i] < arr[i + 1]) {
+                        // Troca os elementos se estiverem fora de ordem
+                        let temp = arr[i];
+                        arr[i] = arr[i + 1];
+                        arr[i + 1] = temp;
+                        trocado = true;
+                    }
+                }
+
+                n--; // Reduz a área não classificada
+            } while (trocado);
+
+            return arr;
+        }
+
+        // Chame a função para ordenar a matriz
+        let matrizOrdenada = ordenarMatrizDecrescente(minhaMatriz);
+
+        // Exiba a matriz ordenada no corpo do HTML
+        let lista = document.getElementById("lista");
+        matrizOrdenada.forEach(function(item) {
+            let li = document.createElement("li");
+            li.textContent = item;
+            lista.appendChild(li);
+        });
+    </script>
+</body>
+</html>
+
+
+

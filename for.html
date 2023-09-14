@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matriz de Nomes</title>
+</head>
+<body>
+    <h1>Matriz de Nomes</h1>
+    <ul id="lista-nomes"></ul>
+
+    <script>
+        // Crie uma matriz de nomes
+        let nomes = ["Alice", "Bob", "Carol", "David", "Eve"];
+
+        // Obtenha a lista UL do documento HTML
+        let listaNomes = document.getElementById("lista-nomes");
+
+        // Use um loop for para iterar sobre a matriz
+        for (let i = 0; i < nomes.length; i++) {
+            // Crie um elemento de lista LI para cada nome
+            let li = document.createElement("li");
+            li.textContent = nomes[i];
+            
+            // Adicione o elemento de lista à lista UL
+            listaNomes.appendChild(li);
+        }
+    </script>
+</body>
+</html>
